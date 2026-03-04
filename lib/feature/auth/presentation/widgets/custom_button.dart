@@ -10,14 +10,14 @@ class CustomButton extends StatelessWidget {
     required this.background,
     required this.colorText,
     required this.pressed,
-    this.colorBorder
+    this.colorBorder,
   });
   final String text;
   final String? pathIcon;
   final Color background;
   final Color colorText;
   final VoidCallback pressed;
-  final Color ?colorBorder;
+  final Color? colorBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +36,10 @@ class CustomButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-          if (pathIcon != null) ...[
-              SvgPicture.asset(
-                pathIcon!,
-                width: 18,
-                height: 18,
-              ),
+            if (pathIcon != null) ...[
+              SvgPicture.asset(pathIcon!, width: 18, height: 18),
               const SizedBox(width: 8),
             ],
-           
 
             Text(
               text,

@@ -48,7 +48,7 @@ class OnboardingScreenBody extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(
             horizontal: size.width * 0.08,
-             vertical: size.height * 0.01,
+            vertical: size.height * 0.01,
           ),
           child: const HomeButton(),
         ),

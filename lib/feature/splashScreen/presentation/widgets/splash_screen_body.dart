@@ -13,20 +13,18 @@ class SplashScreenBody extends StatefulWidget {
 class _SplashScreenBodyState extends State<SplashScreenBody> {
   @override
   void initState() {
-     super.initState();
+    super.initState();
     Future.delayed(Duration(seconds: 2), () {
-       context.go(AppRouter.onboarding);
+      context.go(AppRouter.onboarding);
     });
-   
   }
 
- @override
-Widget build(BuildContext context) {
-  return Stack(
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
       children: [
-     
         Positioned(
-          top:100,
+          top: 100,
           left: 0,
           right: 0,
           child: Image.asset(
@@ -36,7 +34,6 @@ Widget build(BuildContext context) {
           ),
         ),
 
-    
         Center(
           child: Image.asset(
             "assets/images/splash.png",
@@ -45,20 +42,15 @@ Widget build(BuildContext context) {
           ),
         ),
 
- 
         Positioned(
           bottom: 60,
           left: 0,
           right: 0,
           child: Center(
-            child: CircularProgressIndicator(
-              color: AppColors.white,
-            ),
+            child: CircularProgressIndicator(color: AppColors.white),
           ),
         ),
       ],
-    
-  );
-}
+    );
   }
-
+}

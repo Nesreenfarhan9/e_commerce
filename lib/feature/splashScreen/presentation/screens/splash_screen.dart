@@ -8,8 +8,9 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        extendBodyBehindAppBar: true,
+      extendBodyBehindAppBar: true,
       backgroundColor: AppColors.black,
-      body:SplashScreenBody() ,);
+      body: SplashScreenBody(),
+    );
   }
 }

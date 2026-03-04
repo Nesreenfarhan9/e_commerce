@@ -60,7 +60,7 @@ class AppTextStyles {
     color: AppColors.darkGray,
     fontFamily: fontFamily,
   );
-   static const TextStyle body8SemiBold = TextStyle(
+  static const TextStyle body8SemiBold = TextStyle(
     fontSize: 32,
     fontWeight: FontWeight.w600,
     color: AppColors.darkGray,
@@ -81,7 +81,7 @@ class AppTextStyles {
     color: AppColors.gray600,
     fontFamily: fontFamily,
   );
-   static const TextStyle body6Regular = TextStyle(
+  static const TextStyle body6Regular = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w400,
     color: AppColors.gray400,
@@ -94,7 +94,7 @@ class AppTextStyles {
     color: AppColors.gray600,
     fontFamily: fontFamily,
   );
-   static const TextStyle body9Medium = TextStyle(
+  static const TextStyle body9Medium = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
     color: AppColors.black,

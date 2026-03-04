@@ -1,6 +1,6 @@
-
 import 'package:flutter_application_1/feature/auth/presentation/screens/digit_code_screen.dart';
 import 'package:flutter_application_1/feature/auth/presentation/screens/forget_password_screen.dart';
+import 'package:flutter_application_1/feature/auth/presentation/screens/home_page.dart';
 import 'package:flutter_application_1/feature/auth/presentation/screens/login_screen.dart';
 import 'package:flutter_application_1/feature/auth/presentation/screens/reset_password_screen.dart';
 import 'package:flutter_application_1/feature/auth/presentation/screens/sign_up_screen.dart';
@@ -8,16 +8,16 @@ import 'package:flutter_application_1/feature/onboarding/presentation/screens/on
 import 'package:flutter_application_1/feature/splashScreen/presentation/screens/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
-
 class AppRouter {
   static const String splash = '/';
   static const String onboarding = '/onboarding';
   static const String signUp = '/sign_up';
   static const String login = '/login';
   static const String forgetPassword = '/forgetPassword';
-  static const String resetPassword='/resetPassword';
-  static const String digitCode='/digitCode';
-  
+  static const String resetPassword = '/resetPassword';
+  static const String digitCode = '/digitCode';
+  static const String homePage = '/homePage';
+
   static final GoRouter router = GoRouter(
     initialLocation: AppRouter.splash,
     debugLogDiagnostics: true,
@@ -32,7 +32,7 @@ class AppRouter {
         name: 'home',
         builder: (context, state) => const OnboardingScreen(),
       ),
-        GoRoute(
+      GoRoute(
         path: AppRouter.signUp,
         name: 'signup',
         builder: (context, state) => const SignUpScreen(),
@@ -42,20 +42,32 @@ class AppRouter {
         name: 'login',
         builder: (context, state) => const LoginScreen(),
       ),
-        GoRoute(
+      GoRoute(
         path: AppRouter.forgetPassword,
         name: 'forgetPawword',
         builder: (context, state) => const ForgetPasswordScreen(),
       ),
-       GoRoute(
+      GoRoute(
         path: AppRouter.resetPassword,
         name: 'resetPassword',
-        builder: (context, state) => const ResetPasswordScreen(),
+        builder: (context, state) {
+          final email = state.extra as String? ?? '';
+          return ResetPasswordScreen(email: email);
+        },
       ),
-       GoRoute(
+      GoRoute(
         path: AppRouter.digitCode,
         name: 'digitCode',
-        builder: (context, state) => const DigitCodeScreen(),
+
+        builder: (context, state) {
+          final email = state.extra as String? ?? "";
+          return DigitCodeScreen(email: email);
+        },
+      ),
+      GoRoute(
+        path: AppRouter.homePage,
+        name: 'homePage',
+        builder: (context, state) => const HomePage(),
       ),
     ],
   );

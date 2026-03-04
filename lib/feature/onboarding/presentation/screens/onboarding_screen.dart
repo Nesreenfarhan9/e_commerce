@@ -9,6 +9,7 @@ class OnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      body: OnboardingScreenBody());
+      body: OnboardingScreenBody(),
+    );
   }
 }

@@ -1,20 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/constanst/depenced_injection.dart';
 import 'package:flutter_application_1/core/utls/app_router.dart';
+import 'package:flutter_application_1/feature/auth/logic/authCubit/auth_cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp(const MyApp());
+  setup();
+  runApp(const Ecommerce());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Ecommerce extends StatelessWidget {
+  const Ecommerce({super.key});
 
-  // This widget is the root of your application.
+ 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: AppRouter.router,
-      debugShowCheckedModeBanner: false,
-     
+    return MultiBlocProvider(
+      providers: [BlocProvider(create: (context) => getIt<AuthCubit>())],
+
+      child: MaterialApp.router(
+        routerConfig: AppRouter.router,
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }
