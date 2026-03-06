@@ -1,9 +1,10 @@
 import 'package:flutter_application_1/feature/auth/presentation/screens/digit_code_screen.dart';
 import 'package:flutter_application_1/feature/auth/presentation/screens/forget_password_screen.dart';
-import 'package:flutter_application_1/feature/auth/presentation/screens/home_page.dart';
+import 'package:flutter_application_1/feature/home/presentation/screens/home_page.dart';
 import 'package:flutter_application_1/feature/auth/presentation/screens/login_screen.dart';
 import 'package:flutter_application_1/feature/auth/presentation/screens/reset_password_screen.dart';
 import 'package:flutter_application_1/feature/auth/presentation/screens/sign_up_screen.dart';
+import 'package:flutter_application_1/feature/home/presentation/screens/item_save_screen.dart';
 import 'package:flutter_application_1/feature/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:flutter_application_1/feature/splashScreen/presentation/screens/splash_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -17,9 +18,10 @@ class AppRouter {
   static const String resetPassword = '/resetPassword';
   static const String digitCode = '/digitCode';
   static const String homePage = '/homePage';
+   static const String itemSave = '/itemSave';
 
   static final GoRouter router = GoRouter(
-    initialLocation: AppRouter.splash,
+    initialLocation: AppRouter.homePage,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -68,6 +70,11 @@ class AppRouter {
         path: AppRouter.homePage,
         name: 'homePage',
         builder: (context, state) => const HomePage(),
+      ),
+       GoRoute(
+        path: AppRouter.itemSave,
+        name: 'itemSave',
+        builder: (context, state) => const ItemSaveScreen(),
       ),
     ],
   );
