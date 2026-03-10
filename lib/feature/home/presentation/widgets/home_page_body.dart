@@ -11,33 +11,28 @@ class HomePageBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return 
-       Padding(
-         padding: const EdgeInsets.symmetric(vertical: 50,horizontal: 20),
-        
-           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              TextHome(
-                text: "Discover", 
-                textStyle:AppTextStyles.body8SemiBold.copyWith(color: AppColors.black) ),
-                SizedBox(height: 8,),
-                CustomTextFormField(hintText: "Search for clothes...",validation: (value){}),
-                SizedBox(height: 10,),
-              SizedBox(
-                height: 36,
-               
-                child: ListVeiwHome()),
-                Expanded(child: GridViewHome()),
-           
-           
-           
-           
-           
-              
-            ],
-               
-         ),
-       );
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
+
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextHome(
+            text: "Discover",
+            textStyle: AppTextStyles.body8SemiBold.copyWith(
+              color: AppColors.black,
+            ),
+          ),
+          SizedBox(height: 8),
+          CustomTextFormField(
+            hintText: "Search for clothes...",
+            validation: (value) {},
+          ),
+          SizedBox(height: 15),
+          SizedBox(height: 36, child: ListVeiwHome()),
+          Expanded(child: GridViewHome()),
+        ],
+      ),
+    );
   }
 }

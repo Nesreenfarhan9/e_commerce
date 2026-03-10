@@ -11,7 +11,13 @@ import 'package:flutter_application_1/feature/auth/data/models/verification_code
 abstract class AuthRepo {
   Future<Either<Failure, AuthResponse>> login(LoginRequest request);
   Future<Either<Failure, AuthResponse>> signUp(SignUpRequest request);
-  Future<Either<Failure, generalResponse>> forgetPassword(ForgetPasswordRequest request);
-  Future<Either<Failure, generalResponse>>verificationCode (VerificationCodeRequest request);
-  Future<Either<Failure, generalResponse>>resetPassword (ResetPasswordRequest request);
+  Future<Either<Failure, generalResponse>> forgetPassword(
+    ForgetPasswordRequest request,
+  );
+  Future<Either<Failure, generalResponse>> verificationCode(
+    VerificationCodeRequest request,
+  );
+  Future<Either<Failure, generalResponse>> resetPassword(
+    ResetPasswordRequest request,
+  );
 }

@@ -4,10 +4,7 @@ class generalResponse extends Equatable {
   final String? statusMsg;
   final String? message;
 
-  const generalResponse({
-    this.statusMsg,
-    this.message,
-  });
+  const generalResponse({this.statusMsg, this.message});
 
   factory generalResponse.fromJson(Map<String, dynamic> json) {
     return generalResponse(
@@ -16,10 +13,7 @@ class generalResponse extends Equatable {
     );
   }
 
-  Map<String, dynamic> toJson() => {
-        'statusMsg': statusMsg,
-        'message': message,
-      };
+  Map<String, dynamic> toJson() => {'statusMsg': statusMsg, 'message': message};
 
   @override
   List<Object?> get props => [statusMsg, message];

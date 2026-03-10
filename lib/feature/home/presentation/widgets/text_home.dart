@@ -8,6 +8,10 @@ class TextHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text, style: textStyle);
+    return Text(
+   
+      maxLines: 1,
+       overflow: TextOverflow.ellipsis,
+      text, style: textStyle);
   }
 }

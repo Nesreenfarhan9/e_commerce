@@ -8,17 +8,21 @@ class ItemSaveBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 20),
+    return Padding(
+      padding: const EdgeInsets.only(top: 270, left: 90),
       child: Column(
-      
         children: [
-        TextHome(text: "TextHome", textStyle: AppTextStyles.header1),
-        Image.asset("assets/images/Heart-duotone.png"),
-         TextHome(text: "No Saved Items!", textStyle: AppTextStyles.header1),
-          TextHome(text: "You don’t have any saved items. Go to home and add some.", textStyle: AppTextStyles.body2Regular.copyWith(color: AppColors.gray500)),
-        
-      ],),
+          TextHome(text: "Saved Items", textStyle: AppTextStyles.header2),
+          Image.asset("assets/images/Heart-duotone.png"),
+          TextHome(text: "No Saved Items!", textStyle: AppTextStyles.header2),
+          TextHome(
+            text: "You don’t have any saved items.\n Go to home and add some.",
+            textStyle: AppTextStyles.body2Regular.copyWith(
+              color: AppColors.gray500,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -3,10 +3,10 @@ import 'package:flutter_application_1/feature/auth/presentation/widgets/reset_pa
 
 class ResetPasswordScreen extends StatelessWidget {
   const ResetPasswordScreen({super.key, required this.email});
-    final String email;
+  final String email;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: ResetPasswordScreenBody(email: email,));
+    return Scaffold(body: ResetPasswordScreenBody(email: email));
   }
 }

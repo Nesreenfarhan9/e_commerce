@@ -37,7 +37,6 @@ class ForgetPasswordFailure extends AuthState {
   const ForgetPasswordFailure(this.errMessage);
 }
 
-
 class VerificationCodeInitial extends AuthState {}
 
 class VerificationCodeLoading extends AuthState {}
@@ -48,8 +47,6 @@ class VerificationCodeFailure extends AuthState {
   final String errMessage;
   const VerificationCodeFailure(this.errMessage);
 }
-
-
 
 class ResetPasswordInitial extends AuthState {}
 

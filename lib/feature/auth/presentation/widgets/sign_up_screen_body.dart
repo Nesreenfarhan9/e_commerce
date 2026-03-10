@@ -70,7 +70,7 @@ class _SignUpScreenBodyState extends State<SignUpScreenBody> {
         }
 
         if (state is SignUpFailure) {
-            if (Navigator.canPop(context)) {
+          if (Navigator.canPop(context)) {
             Navigator.pop(context);
           }
           ScaffoldMessenger.of(

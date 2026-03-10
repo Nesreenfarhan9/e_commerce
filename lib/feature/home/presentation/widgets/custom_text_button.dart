@@ -4,18 +4,18 @@ import 'package:flutter_application_1/core/utls/app_text_style.dart';
 import 'package:flutter_application_1/feature/home/presentation/widgets/text_home.dart';
 
 class CustomTextButton extends StatelessWidget {
-  
-
-  CustomTextButton({required this.text, required this.onTap,required this.isSelect});
+  CustomTextButton({
+    required this.text,
+    required this.onTap,
+    required this.isSelect,
+  });
 
   final String text;
-  final  bool isSelect ;
-  final VoidCallback ?onTap;
+  final bool isSelect;
+  final VoidCallback? onTap;
   @override
-
   @override
   Widget build(BuildContext context) {
-
     return TextButton(
       onPressed: onTap,
       style: TextButton.styleFrom(
@@ -28,10 +28,12 @@ class CustomTextButton extends StatelessWidget {
       ),
 
       child: TextHome(
-        
         text: text,
-         
-         textStyle:  AppTextStyles.body2Medium.copyWith( color:   isSelect ? Colors.white : Colors.black )),
+
+        textStyle: AppTextStyles.body2Medium.copyWith(
+          color: isSelect ? Colors.white : Colors.black,
+        ),
+      ),
     );
   }
 }

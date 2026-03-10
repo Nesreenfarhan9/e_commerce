@@ -12,7 +12,6 @@ void main() {
 class Ecommerce extends StatelessWidget {
   const Ecommerce({super.key});
 
- 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(

@@ -14,7 +14,7 @@ class CustomTextFormField extends StatelessWidget {
   final TextEditingController? controller;
   final String hintText;
   final bool isPassword;
-  final  bool obscureText;
+  final bool obscureText;
   final VoidCallback? onToggleVisibility;
   final String? Function(String?)? validation;
 
@@ -49,7 +49,7 @@ class CustomTextFormField extends StatelessWidget {
           borderSide: BorderSide(width: 1, color: AppColors.gray100),
           borderRadius: BorderRadius.circular(10),
         ),
-          errorBorder: OutlineInputBorder(
+        errorBorder: OutlineInputBorder(
           borderSide: BorderSide(width: 1, color: AppColors.gray100),
           borderRadius: BorderRadius.circular(10),
         ),
