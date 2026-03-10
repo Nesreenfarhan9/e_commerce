@@ -4,9 +4,11 @@ import 'package:flutter_application_1/core/utls/app_colors.dart';
 import 'package:flutter_application_1/core/utls/app_images.dart';
 import 'package:flutter_application_1/core/utls/app_text_style.dart';
 import 'package:flutter_application_1/feature/home/data/models/product_model/datum.dart';
+import 'package:flutter_application_1/feature/home/logic/cubitProduct/saved_item_cubit.dart';
 import 'package:flutter_application_1/feature/home/presentation/widgets/rating_widget.dart';
 import 'package:flutter_application_1/feature/home/presentation/widgets/size_selector%20.dart';
 import 'package:flutter_application_1/feature/home/presentation/widgets/text_home.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
@@ -52,9 +54,22 @@ class ProductDetailsBody extends StatelessWidget {
                     color: AppColors.white,
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: const Icon(
-                    Icons.favorite_border_outlined,
-                    size: 20,
+                  child:  IconButton(
+                    icon: Icon(
+                      context.watch<SavedItemCubit>().isFavorite(product)
+                          ? Icons.favorite
+                          : Icons.favorite_border,
+                      //color: Colors.red,
+                    ),
+                    onPressed: () {
+                      final cubit = context.read<SavedItemCubit>();
+
+                      if (cubit.isFavorite(product)) {
+                        cubit.removeFavorite(product);
+                      } else {
+                        cubit.addFavorite(product);
+                      }
+                    },
                   ),
                 ),
               ],

@@ -67,7 +67,7 @@ class HomeRepoImpl extends HomeRepo {
   }) async {
 
     try {
-         print("${ApiConstanst.productBySubCategory}$id");
+      
 
       final data = await apiService.get(
         endpoint: "${ApiConstanst.productBySubCategory}$id",

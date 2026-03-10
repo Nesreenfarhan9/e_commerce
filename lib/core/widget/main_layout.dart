@@ -2,18 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/utls/app_colors.dart';
 import 'package:flutter_application_1/core/utls/app_images.dart';
 import 'package:flutter_application_1/core/utls/app_text_style.dart';
+import 'package:flutter_application_1/feature/home/data/models/product_model/datum.dart';
 import 'package:flutter_application_1/feature/home/presentation/screens/home_page.dart';
 import 'package:flutter_application_1/feature/home/presentation/screens/item_save_screen.dart';
 import 'package:flutter_svg/svg.dart';
 
 class MainLayout extends StatefulWidget {
-  const MainLayout({super.key});
+  const MainLayout({super.key, });
+   
 
   @override
   State<MainLayout> createState() => _MainLayoutState();
 }
 
 class _MainLayoutState extends State<MainLayout> {
+  
+
   int curruntIndex = 0;
   List screens = [HomePage(), Placeholder(), ItemSaveScreen(), Placeholder()];
 

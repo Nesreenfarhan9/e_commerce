@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/constanst/depenced_injection.dart';
 import 'package:flutter_application_1/core/utls/app_router.dart';
 import 'package:flutter_application_1/feature/auth/logic/authCubit/auth_cubit.dart';
+import 'package:flutter_application_1/feature/home/logic/cubitProduct/saved_item_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
@@ -15,7 +16,13 @@ class Ecommerce extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [BlocProvider(create: (context) => getIt<AuthCubit>())],
+      providers: [BlocProvider(create: (context) => getIt<AuthCubit>()),
+       BlocProvider(
+      create: (context) => SavedItemCubit(),
+    ),
+      ]
+      ,
+      
 
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
