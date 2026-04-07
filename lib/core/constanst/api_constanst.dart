@@ -7,4 +7,5 @@ class ApiConstanst {
   static String subCategoryEndpoint = "subcategories";
   static String productEndpoint = "products";
   static String productBySubCategory = "products?subcategory=";
+
 }

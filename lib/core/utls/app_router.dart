@@ -8,7 +8,7 @@ import 'package:flutter_application_1/feature/auth/presentation/screens/reset_pa
 import 'package:flutter_application_1/feature/auth/presentation/screens/sign_up_screen.dart';
 import 'package:flutter_application_1/feature/home/presentation/screens/item_save_screen.dart';
 import 'package:flutter_application_1/feature/home/presentation/screens/product_details_screen.dart';
-import 'package:flutter_application_1/feature/home/presentation/screens/search_screen.dart';
+import 'package:flutter_application_1/feature/search/presentation/screen/search_screen.dart';
 import 'package:flutter_application_1/feature/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:flutter_application_1/feature/splashScreen/presentation/screens/splash_screen.dart';
 import 'package:go_router/go_router.dart';

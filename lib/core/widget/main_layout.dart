@@ -5,6 +5,7 @@ import 'package:flutter_application_1/core/utls/app_text_style.dart';
 import 'package:flutter_application_1/feature/home/data/models/product_model/datum.dart';
 import 'package:flutter_application_1/feature/home/presentation/screens/home_page.dart';
 import 'package:flutter_application_1/feature/home/presentation/screens/item_save_screen.dart';
+import 'package:flutter_application_1/feature/search/presentation/screen/search_screen.dart';
 import 'package:flutter_svg/svg.dart';
 
 class MainLayout extends StatefulWidget {
@@ -19,7 +20,7 @@ class _MainLayoutState extends State<MainLayout> {
   
 
   int curruntIndex = 0;
-  List screens = [HomePage(), Placeholder(), ItemSaveScreen(), Placeholder()];
+  List screens = [HomePage(), SearchScreen(), ItemSaveScreen(), Placeholder()];
 
   @override
   Widget build(BuildContext context) {
