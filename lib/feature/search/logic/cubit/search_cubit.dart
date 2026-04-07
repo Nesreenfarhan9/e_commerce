@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter_application_1/feature/home/data/models/product_model/datum.dart';
 import 'package:flutter_application_1/feature/home/data/models/product_model/product_model.dart';
 import 'package:flutter_application_1/feature/search/data/repo/search_repo.dart';
 
@@ -26,18 +27,19 @@ class SearchCubit extends Cubit<SearchState> {
 
     final result = await repo.search(keyword: keyword);
 
+   
     result.fold(
-      (failure) => emit(SearchError(errorMessage: failure.errMessage)),
-      (products) async {
-        await repo.saveSearch(keyword);
+  (failure) => emit(SearchError(errorMessage: failure.errMessage)),
+  (products) async {
+    await repo.saveSearch(keyword);
 
-        if (products.isEmpty) {
-          emit(SearchEmpty());
-        } else {
-          emit(SearchSuccess(products));
-        }
-      },
-    );
+    if (products.data?.isEmpty ?? true){
+      emit(SearchEmpty());
+    } else {
+      emit(SearchSuccess(products.data!)); 
+    }
+  },
+);
   }
 
   /// 🔹 remove item

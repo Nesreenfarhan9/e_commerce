@@ -10,24 +10,22 @@ class SearchRepoImpl extends SearchRepo {
   final ApiService apiService;
   @override
   SearchRepoImpl(this.apiService);
-  Future<Either<Failure, List<ProductModel>>> search({
-    required String keyword,
-  }) async {
-    try {
-      final data = await apiService.get(endpoint: "products?keyword=$keyword");
+ Future<Either<Failure, ProductModel>> search({
+  required String keyword,
+}) async {
+  try {
+    final data =
+        await apiService.get(endpoint: "products?keyword=$keyword");
 
-      List<ProductModel> products = (data['products'] as List)
-          .map((e) => ProductModel.fromJson(e))
-          .toList();
+    final productModel = ProductModel.fromJson(data);
 
-      return right(products);
-    } on DioException catch (e) {
-      return left(ServerFailure.fromDioException(e));
-    } catch (e) {
-      return left(ServerFailure(e.toString()));
-    }
+    return right(productModel); 
+  } on DioException catch (e) {
+    return left(ServerFailure.fromDioException(e));
+  } catch (e) {
+    return left(ServerFailure(e.toString()));
   }
-
+}
   @override
   Future<List<String>> getRecentSearches() async {
     final prefs = await SharedPreferences.getInstance();
@@ -35,7 +33,7 @@ class SearchRepoImpl extends SearchRepo {
   }
 
   @override
-  Future<void> saveSearch({ required String keyword} ) async {
+  Future<void> saveSearch(String keyword ) async {
     final prefs = await SharedPreferences.getInstance();
 
     List<String> searches = prefs.getStringList('recent') ?? [];
